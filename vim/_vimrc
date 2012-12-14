@@ -1,0 +1,52 @@
+" Configuration file for vim
+
+set nocompatible
+filetype off
+
+" setup vundle
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+" Bundles
+Bundle 'Raimondi/delimitMate'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'jistr/vim-nerdtree-tabs'
+
+" custom ignore
+get g:ctrlp_custom_ignore = {
+  \ 'dir': '\v[\/](haproxy-1.4.20|node_modules|.git|yui-compressor)$',
+  \ }
+
+" Add line numbers
+set number
+
+" Set tab spaces
+set ts=2
+set smarttab
+set expandtab
+set shiftwidth=2
+
+" show matching braces, brackets, etc
+set showmatch
+syntax on
+filetype plugin indent on
+
+" turn off auto backup
+set nobackup
+
+" set NERDTree automatically when starting vim
+" autocmd vimenter * NERDTree
+" autocmd BufEnter * NERDTreeMirror
+
+" Configure vim-nerdtree-tabs
+let g:nerdtree_tabs_open_on_console_startup=1
+
+" Map custom commands for tab switching
+map <C-t><left> :tabp<cr>
+map <C-t><right> :tabn<cr>
+
+" Fix backspace
+set backspace=indent,eol,start
