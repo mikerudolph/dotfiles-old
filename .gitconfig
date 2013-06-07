@@ -1,0 +1,27 @@
+[color]
+  ui = true
+[alias]
+  s = status
+  ci = commit
+  b = branch -v
+  plr = pull --rebase
+  d = diff
+  co = checkout
+  lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+  head = !git --no-pager log origin/instant..HEAD --abbrev-commit --pretty=oneline
+  find = !sh -c 'git ls-tree -r --name-only HEAD | grep --color $1' -
+  cleanb = !git branch --merged instant | grep -v 'instant$' | xargs git branch -d
+[user]
+  name = Mike Rudolph
+  user = mikerudolph
+	email = mikerudolph@goinstant.com
+[credential]
+	helper = osxkeychain
+[core]
+	editor = /usr/bin/vim
+	excludesfile = /Users/mike.rudolph/.gitignore_global
+[github]
+	user = mikerudolph
+[url "git@github.com:"]
+  insteadOf = git://github.com
+  insteadOf = https://github.com
